@@ -4,14 +4,21 @@ class CoursesPage extends React.Component{
     constructor(props, context){
       super(props, context);
       this.state = {
-        course: { title: null }
+        course: { title: "" }
       };
+
+      this.onTitleChange = this.onTitleChange.bind(this);
+      this.onClickSave = this.onClickSave.bind(this);
     }
 
     onTitleChange(event){
       let course = this.state.course;
       course.title = event.target.value;
-      setState({course: course});
+      this.setState({course: course});
+    }
+
+    onClickSave(){
+      alert(`${this.state.course.title} guardado con exito.`);
     }
 
     render(){
@@ -24,7 +31,7 @@ class CoursesPage extends React.Component{
               value={this.state.course.title}/>
           <br/>
           <input type="submit"
-              onClick={this.titleSave}
+              onClick={this.onClickSave}
               value="Guardar"/>
         </div>
       );
