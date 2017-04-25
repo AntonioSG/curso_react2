@@ -27,7 +27,8 @@ class managerCoursesPage extends React.Component {
     saveCourse(event){
       event.preventDefault();
       this.props.actions.saveCourse(this.state.course);
-   }
+      this.context.router.push("/courses");
+    }
 
     render() {
         return (
@@ -46,6 +47,10 @@ managerCoursesPage.propTypes = {
     course: PropTypes.object.isRequired,
     authors: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
+};
+
+managerCoursesPage.contextTypes = {
+   router: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {
