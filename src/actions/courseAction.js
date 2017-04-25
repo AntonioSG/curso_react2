@@ -6,11 +6,11 @@ export function loadCoursesSuccess(courses){
 }
 
 export function updateCourseSuccess(course) {
-  return {type: type.UPDATE_COURSE_SUCCESS, course}
+  return {type: type.UPDATE_COURSE_SUCCESS, course};
 }
 
 export function createCourseSuccess(course) {
-  return {type: type.CREATE_COURSE_SUCCESS, course}
+  return {type: type.CREATE_COURSE_SUCCESS, course};
 }
 
 export function loadCourses() {
@@ -23,14 +23,11 @@ export function loadCourses() {
   };
 }
 
-export function saveCourses(course) {
+export function saveCourse(course) {
   return function (dispatch, getState) {
     return courseApi.saveCourse(course).then(savedCourse => {
-      course.id
-        ? dispatch(updateCourseSuccess(savedCourse))
-        : dispatch(createCourseSuccess(savedCourse));
-    }).catch(error => {
-      throw(error);
-    });
-  }
+      course.id ? dispatch(updateCourseSuccess(savedCourse)) :
+        dispatch(createCourseSuccess(savedCourse));
+    }).catch(error => {throw(error);});
+  };
 }

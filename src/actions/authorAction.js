@@ -9,8 +9,6 @@ export function loadAuthors() {
   return dispatch => {
     return authorApi.getAllAuthors().then(authors => {
       dispatch(loadAuthorsSuccess(authors));
-    }).catch(error => {
-      throw(error);
-    });
+    }).catch(error => {throw(error);});
   };
 }
