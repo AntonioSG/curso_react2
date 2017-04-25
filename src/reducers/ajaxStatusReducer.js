@@ -8,7 +8,8 @@ function actionTypeEndsInSuccess(type) {
 export default function ajaxStatusReducer(state = initialState.numberAjaxCallInProgress, action) {
   if(action.type ===  type.BEGIN_AJAX_CALL){
     return state + 1;
-  }else if (actionTypeEndsInSuccess(action.type)) {
+  }else if (action.type === type.AJAX_CALL_ERROR ||
+    actionTypeEndsInSuccess(action.type)) {
     return state - 1;
   }
 
