@@ -4,7 +4,7 @@ import App from './components/App';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import CoursesPage from './components/course/coursesPage';
-import ManageCoursePage from './components/course/managerCoursesPage';
+import ManageCoursePage from './components/course/ManagerCoursePage';
 
 export default (
   <Route path="/" components={App}>
