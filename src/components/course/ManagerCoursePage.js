@@ -6,7 +6,6 @@ import {authorsFormattedForDropdown} from '../../selectors/selectors';
 import CourseForm from './courseForm';
 import toastr from 'toastr';
 
-
 export class ManagerCoursePage extends React.Component {
 
   constructor(props, context) {
@@ -51,9 +50,11 @@ export class ManagerCoursePage extends React.Component {
   saveCourse(event){
     event.preventDefault();
 
+    /*
     if(!this.courseFormIsValid()){
       return;
     }
+    */
 
     this.setState({saving: true});
     this.props.actions.saveCourse(this.state.course)
