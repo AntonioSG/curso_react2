@@ -1,4 +1,4 @@
-import * as type from '../actions/actionsTypes';
+import * as types from '../actions/actionsTypes';
 import initialState from './initialState';
 
 function actionTypeEndsInSuccess(type) {
@@ -6,9 +6,9 @@ function actionTypeEndsInSuccess(type) {
 }
 
 export default function ajaxStatusReducer(state = initialState.numberAjaxCallInProgress, action) {
-  if(action.type ===  type.BEGIN_AJAX_CALL){
+  if(action.type ===  types.BEGIN_AJAX_CALL){
     return state + 1;
-  }else if (action.type === type.AJAX_CALL_ERROR ||
+  }else if (action.type === types.AJAX_CALL_ERROR ||
     actionTypeEndsInSuccess(action.type)) {
     return state - 1;
   }

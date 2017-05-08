@@ -1,11 +1,14 @@
 import express from 'express';
 import path from 'path';
 import open from 'open';
+import compresion from 'compression';
 
 /*esLint-disable no-console*/
 
 const port = 3000;
 const app = express();
+
+app.use(compresion());
 
 app.use(express.static('dist'));
 

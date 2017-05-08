@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-const GLOBAL = {
+const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production')
 };
 
@@ -18,11 +18,11 @@ export default {
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: "./dist"
+        contentBase: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.DefinePlugin(GLOBAL),
+        new webpack.DefinePlugin(GLOBALS),
         new ExtractTextPlugin('styles.css'),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin()

@@ -5,7 +5,7 @@ import {ManagerCoursePage} from '../components/course/ManagerCoursePage';
 
 describe("Manage Coruse Page", () => {
 
-  it("sets error menssage when trying to save empty title", function () {
+  xit("sets error menssage when trying to save empty title", function () {
      const props = {
      authors: [],
      actions: {saveCourse: () => {return Promise.resolve();}},
